@@ -1,0 +1,21 @@
+.aws {
+  width: 100%;
+  height: 35vh;
+  margin: 0 !important;
+  backdrop-filter: blur(6px);
+  background: rgba(18, 18, 18, .5) !important;
+  border-radius: 10px !important;
+}
+
+.aws .cardContent {
+  padding: 0 !important;
+  margin-left: 20px;
+}
+
+.aws .title {
+  font-size: 2.4vh !important;
+}
+
+.aws .content {
+  font-size: 1.8vh;
+}

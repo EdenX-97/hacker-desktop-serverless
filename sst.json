@@ -1,0 +1,5 @@
+{
+  "name": "hacker-desktop-api-serverless",
+  "region": "ap-southeast-2",
+  "main": "stacks/index.ts"
+}

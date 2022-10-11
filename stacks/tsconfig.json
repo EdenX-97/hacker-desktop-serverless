@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    // Suppport to import json file
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  }
+}

@@ -1,0 +1,49 @@
+.podcasts {
+  width: 35vw;
+  height: 35vh;
+  margin: 0 !important;
+  backdrop-filter: blur(6px);
+  background: rgba(18, 18, 18, 0.5) !important;
+  border-radius: 10px !important;
+  overflow: auto !important;
+}
+
+.podcasts .cardContent {
+  padding: 0;
+}
+
+.formControl {
+  width: 90%;
+}
+
+.img {
+  width: 8vw !important;
+}
+
+.podcasts .title {
+  font-size: 2.4vh !important;
+}
+
+.icon {
+  width: 4vh !important;
+}
+
+.selector {
+  margin-left: 1.5vw !important;
+  margin-top: 1.5vh !important;
+  width: 100%;
+}
+
+.audioPlayCard {
+  background: rgba(0, 0, 0, 0) !important;
+  margin-top: 4vh;
+  border: none !important;
+  border-radius: 0 !important;
+  transition: box-shadow 0ms !important;
+  box-shadow: none !important;
+  margin-left: 2vw;
+}
+
+.MuiButtonBase-root {
+  height: auto !important;
+}

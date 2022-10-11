@@ -1,0 +1,13 @@
+{
+  "name": "Hacker Desktop",
+  "version": "0.1",
+  "manifest_version": 3,
+  "description": "Hacker Desktop",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  
+  "host_permissions": [
+    "http://localhost:8777/"
+  ]
+}

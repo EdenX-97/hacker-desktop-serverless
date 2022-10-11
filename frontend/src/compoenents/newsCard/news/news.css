@@ -1,0 +1,16 @@
+.typography {
+  margin-top: 0.2vh !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+  width: 30vw;
+}
+
+.typography .icon {
+  margin-right: 0.5vw !important;
+  font-size: 1.6vh;
+}
+
+.link {
+  font-size: 2vh;
+}
