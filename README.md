@@ -135,6 +135,7 @@ You can access your website using the domain address if you set your own domain.
 - Cognite for auth
 - SSM to use configurations
 - Support Chrome extension to replace start page
+- Use GraphQL
 
 ## Contributing
 
