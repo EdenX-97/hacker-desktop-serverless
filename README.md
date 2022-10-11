@@ -1,6 +1,6 @@
 <div align="center">
 
-![Logo](https://github.com/EdenX-97/hacker-desktop-serverless/blob/7961e5888918c2bce6785e6c1aed64a04b275aa2/frontend/public/logo.png)
+![Logo](https://github.com/EdenX-97/hacker-desktop-serverless/blob/8abe88b2b95d6190ba9e69a77efdabc4016303e4/frontend/public/logo.png)
 
 # Hacker Desktop
 
@@ -12,7 +12,7 @@ A desktop that provides news and podcasts with developer-related information. Ad
 
 ## Example
 
-![Example](https://github.com/EdenX-97/hacker-desktop-serverless/blob/7961e5888918c2bce6785e6c1aed64a04b275aa2/frontend/public/example.jpg)
+![Example](https://github.com/EdenX-97/hacker-desktop-serverless/blob/8abe88b2b95d6190ba9e69a77efdabc4016303e4/frontend/public/example.jpg)
 
 ## Installing
 
