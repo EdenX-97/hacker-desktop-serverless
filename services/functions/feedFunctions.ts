@@ -3,7 +3,7 @@
  * @Author: Mo Xu
  * @Date: 2022-10-06 22:11:58
  * @LastEditors: Mo Xu
- * @LastEditTime: 2022-10-09 21:53:53
+ * @LastEditTime: 2022-10-12 21:07:42
  */
 import { APIGatewayProxyHandlerV2, APIGatewayProxyEventV2 } from "aws-lambda";
 import dynamodb from "./../utils/dynamodb";
@@ -18,7 +18,7 @@ import configs from "./../../configs.json";
 // Get table name from env
 const tableName = process.env.TABLE_NAME_FEEDS;
 
-async function subscribe(url: string): Promise<resultType> {
+export async function subscribe(url: string): Promise<resultType> {
   if (!url || !checkUrl(url)) {
     return result(status.NOTFOUND, "Url not input or incorrect");
   }
