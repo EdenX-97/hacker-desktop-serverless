@@ -51,6 +51,5 @@
     "feedApiDomain": "feed.<YOUR_DOMAIN>",
     "newsApiDomain": "news.<YOUR_DOMAIN>",
     "podcastApiDomain": "podcast.<YOUR_DOMAIN>"
-  },
-  "wakatime": "https://wakatime.com/share/@b8132544-7f10-4d2e-a6e6-f9cb6808e0f4/3964b57d-1cc5-4ddd-819f-38fcd37e75ac.svg"
+  }
 }
