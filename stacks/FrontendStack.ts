@@ -3,7 +3,7 @@
  * @Author: Mo Xu
  * @Date: 2022-10-08 18:39:42
  * @LastEditors: Mo Xu
- * @LastEditTime: 2022-10-11 17:31:11
+ * @LastEditTime: 2022-10-14 01:24:57
  */
 import {
   StackContext,
@@ -20,8 +20,8 @@ export function FrontendStack({ stack, app }: StackContext) {
     customDomain:
       app.stage === "prod"
         ? {
-            domainName: configs.domain.frontDomainName,
-            domainAlias: configs.domain.frontDomainAlias,
+            domainName: configs.domain,
+            domainAlias: "www." + configs.domain,
           }
         : undefined,
     path: "frontend",

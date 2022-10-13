@@ -45,11 +45,5 @@
     "https://changelog.com/podcast/feed",
     "http://feeds.codenewbie.org/cnpodcast.xml"
   ],
-  "domain": {
-    "frontDomainName": "<YOUR_DOMAIN>",
-    "frontDomainAlias": "www.<YOUR_DOMAIN>",
-    "feedApiDomain": "feed.<YOUR_DOMAIN>",
-    "newsApiDomain": "news.<YOUR_DOMAIN>",
-    "podcastApiDomain": "podcast.<YOUR_DOMAIN>"
-  }
+  "domain": "<YOUR_DOMAIN>"
 }

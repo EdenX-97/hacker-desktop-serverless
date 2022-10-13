@@ -12,6 +12,10 @@
   height: 100%;
 }
 
+.news .cardContent .MuiTab-root {
+  font-size: 1.6vh;
+}
+
 .tabPanel {
   padding: 10px 20px !important;
   overflow-y: auto !important;

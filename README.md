@@ -124,6 +124,7 @@ You can access your website using the domain address if you set your own domain.
     - Code Newbie
   - Present the time
   - Coding Activity (supported by [Wakatime](https://wakatime.com/))
+  - Google search bar
 
 ## Future
 
@@ -131,10 +132,7 @@ You can access your website using the domain address if you set your own domain.
 
 - Podcast 
   - The Stack Overflow Podcast 
-- Search bar
-  - Google
-  - Bing
-- Present the weather
+- Present the location and current weather
 - AWS monitor
   - Billing
   - CloudWatch
