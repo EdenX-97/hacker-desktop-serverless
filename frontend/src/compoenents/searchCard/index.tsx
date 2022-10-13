@@ -21,19 +21,13 @@ function TimeAndSearchCard() {
         <List>
           <ListItem disablePadding>
             <ListItemButton>
-              <ListItemText
-                className="itemText"
-                primary="Search item example"
-              />
+              <ListItemText className="itemText" primary="Bookmark 1" />
             </ListItemButton>
           </ListItem>
 
           <ListItem disablePadding>
             <ListItemButton>
-              <ListItemText
-                className="itemText"
-                primary="Search item example"
-              />
+              <ListItemText className="itemText" primary="Bookmark 2" />
             </ListItemButton>
           </ListItem>
         </List>

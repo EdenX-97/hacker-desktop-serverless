@@ -25,6 +25,7 @@ A desktop that provides news and podcasts with developer-related information. Ad
    - Need [Python](https://www.python.org/downloads/)
 3. [Node.js](https://nodejs.org/en/)
    - Suggest version 16.17
+4. [Wakatime](https://wakatime.com/)
 
 ### Configure the AWS
 
@@ -33,6 +34,22 @@ Run the following with your access key ID and secret access key.
 `aws configure`
 
 You can leave the Default region name and Default output format.
+
+### Configure the Wakatime
+
+Login your [wakatime](https://wakatime.com/) dashboard, set up all IDEs you use in [Supported IDEs](https://wakatime.com/plugins).
+
+Then go to [Share - Embeddable Charts](https://wakatime.com/share/embed), set as follows:
+- Format: SVG
+- Chart Type: Coding Activity
+- Date Range: Last 7 Days
+- Color Scheme: Custom
+- Background Color: check the transparent
+- Foreground Color: #ffffff
+- Show title: uncheck
+- I understand...: check
+
+After then, click `Get Embeddable Code` and copy the url in embed src. Paste your url to `/frontend/src/configs.json`.
 
 ## Developing
 
@@ -106,6 +123,7 @@ You can access your website using the domain address if you set your own domain.
     - Changelog
     - Code Newbie
   - Present the time
+  - Coding Activity (supported by [Wakatime](https://wakatime.com/))
 
 ## Future
 
@@ -132,7 +150,7 @@ You can access your website using the domain address if you set your own domain.
 
 - Frontend page responsive
 - Scheduled tasks to update news and podcasts
-- Cognite for auth
+- AWS Cognite for auth
 - SSM to use configurations
 - Support Chrome extension to replace start page
 - Use GraphQL

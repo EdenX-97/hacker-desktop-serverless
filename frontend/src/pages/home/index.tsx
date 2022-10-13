@@ -4,7 +4,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 import PodcastsCard from "../../compoenents/podcastsCard";
 import SearchCard from "../../compoenents/searchCard";
 import AwsCard from "../../compoenents/awsCard";
-import BookmarksCard from "../../compoenents/bookmarksCard";
+import CodingActivityCard from "../../compoenents/codingActivityCard";
 import TimeCard from "../../compoenents/titleAndtimeCard";
 
 function Home() {
@@ -26,7 +26,7 @@ function Home() {
         <AwsCard />
       </Grid>
       <Grid display="flex" justifyContent="center" xs={3}>
-        <BookmarksCard />
+        <CodingActivityCard />
       </Grid>
     </Grid>
   );
