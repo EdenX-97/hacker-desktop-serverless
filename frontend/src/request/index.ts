@@ -4,6 +4,7 @@ import axios from "axios";
 const newsApi = process.env.REACT_APP_API_URL_NEWS;
 const podcastApi = process.env.REACT_APP_API_URL_PODCAST;
 const costApi = process.env.REACT_APP_API_URL_COST;
+const weatherApi = process.env.REACT_APP_API_URL_WEATHER;
 
 // Default timeout 3 seconds
 const timeout = 30000;
@@ -21,6 +22,11 @@ const podcastRequest = axios.create({
 const costRequest = axios.create({
   timeout: timeout,
   baseURL: costApi,
+});
+
+const weatherRequest = axios.create({
+  timeout: timeout,
+  baseURL: weatherApi,
 });
 
 newsRequest.interceptors.request.use(
@@ -77,4 +83,22 @@ costRequest.interceptors.response.use(
   }
 );
 
-export { newsRequest, podcastRequest, costRequest };
+weatherRequest.interceptors.request.use(
+  (config) => {
+    return config;
+  },
+  (err) => {
+    console.log(err);
+  }
+);
+
+weatherRequest.interceptors.response.use(
+  (res) => {
+    return res;
+  },
+  (err) => {
+    console.log(err);
+  }
+);
+
+export { newsRequest, podcastRequest, costRequest, weatherRequest };

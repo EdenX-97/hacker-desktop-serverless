@@ -1,17 +1,16 @@
 /*
- * @Description: Cost function
+ * @Description: Cost functions
  * @Author: Mo Xu
  * @Date: 2022-10-14 02:08:06
  * @LastEditors: Mo Xu
- * @LastEditTime: 2022-10-14 17:25:29
+ * @LastEditTime: 2022-10-15 01:04:47
  */
 import { APIGatewayProxyHandlerV2 } from "aws-lambda";
 import AWS, { CostExplorer } from "aws-sdk";
 import { GetCostAndUsageRequest } from "aws-sdk/clients/costexplorer";
 import status from "./../enums/status";
-import { result } from "./../utils/result";
 import dynamodb from "./../utils/dynamodb";
-import { stringify } from "uuid";
+import { result } from "./../utils/result";
 
 // Set cost explorer
 AWS.config.update({ region: "us-east-1" });
@@ -48,10 +47,7 @@ export const updateBilling: APIGatewayProxyHandlerV2 = async () => {
 
     billing = response.ResultsByTime?.at(0)?.Total?.UnblendedCost?.Amount;
   } catch (e: unknown) {
-    return result(
-      status.FAIL,
-      "Cannot get billing: " + e
-    );
+    return result(status.FAIL, "Cannot get billing: " + e);
   }
 
   if (billing) {

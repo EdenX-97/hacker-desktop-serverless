@@ -3,7 +3,7 @@
  * @Author: Mo Xu
  * @Date: 2022-10-01 00:29:32
  * @LastEditors: Mo Xu
- * @LastEditTime: 2022-10-14 16:05:36
+ * @LastEditTime: 2022-10-15 01:47:01
  */
 import { StackContext, Api, use } from "@serverless-stack/resources";
 import { StorageStack } from "./StorageStack";
@@ -26,6 +26,7 @@ export function ApiStack({ stack, app }: StackContext) {
     newsDomain: "news." + configs.domain,
     podcastDomain: "podcast." + configs.domain,
     costDomain: "cost." + configs.domain,
+    weatherDomain: "weather." + configs.domain,
   };
 
   const feedApi = new Api(stack, "FeedApi", {
@@ -97,6 +98,22 @@ export function ApiStack({ stack, app }: StackContext) {
     },
   });
 
+  const weatherApi = new Api(stack, "WeatherApi", {
+    customDomain: app.stage === "prod" ? apiDomain.weatherDomain : undefined,
+    defaults: {
+      function: {
+        permissions: [dictionary],
+        environment: environment,
+        timeout: 60,
+      },
+    },
+    routes: {
+      "PUT /weather/updateWeather": "functions/weatherFunctions.updateWeather",
+      "GET /weather/getWeather": "functions/weatherFunctions.getWeather",
+      "GET /weather/getTemp": "functions/weatherFunctions.getTemp",
+    },
+  });
+
   // // Add outputs of api
   // stack.addOutputs({ ApiEndpoint: feedApi.url + newsApi.url + podcastApi.url +  });
 
@@ -105,5 +122,6 @@ export function ApiStack({ stack, app }: StackContext) {
     newsApi,
     podcastApi,
     costApi,
+    weatherApi,
   };
 }

@@ -3,7 +3,7 @@
  * @Author: Mo Xu
  * @Date: 2022-10-08 18:39:42
  * @LastEditors: Mo Xu
- * @LastEditTime: 2022-10-14 16:06:13
+ * @LastEditTime: 2022-10-15 01:25:05
  */
 import {
   StackContext,
@@ -14,7 +14,7 @@ import { ApiStack } from "./ApiStack";
 import configs from "./../configs.json";
 
 export function FrontendStack({ stack, app }: StackContext) {
-  const { newsApi, podcastApi, costApi }: any = use(ApiStack);
+  const { newsApi, podcastApi, costApi, weatherApi }: any = use(ApiStack);
 
   const site = new ReactStaticSite(stack, "ReactSite", {
     customDomain:
@@ -30,6 +30,7 @@ export function FrontendStack({ stack, app }: StackContext) {
       REACT_APP_API_URL_NEWS: newsApi.customDomainUrl || newsApi.url,
       REACT_APP_API_URL_PODCAST: podcastApi.customDomainUrl || podcastApi.url,
       REACT_APP_API_URL_COST: costApi.customDomainUrl || costApi.url,
+      REACT_APP_API_URL_WEATHER: weatherApi.customDomainUrl || weatherApi.url,
       REACT_APP_REGION: app.region,
     },
   });

@@ -9,7 +9,7 @@ const initialState: CostState = {
   billing: "0",
 };
 
-// Async function for get news from api
+// Async function for get cost from api
 export const fetchCost = createAsyncThunk("cost/fetchCost", async () => {
   const res = await costRequest.get("/cost/getBilling");
   return res.data;

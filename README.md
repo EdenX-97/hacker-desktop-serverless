@@ -26,6 +26,7 @@ A desktop that provides news and podcasts with developer-related information. Ad
 3. [Node.js](https://nodejs.org/en/)
    - Suggest version 16.17
 4. [Wakatime](https://wakatime.com/)
+5. [Open weather map](https://openweathermap.org/api)
 
 ### Configure the AWS
 
@@ -50,6 +51,14 @@ Then go to [Share - Embeddable Charts](https://wakatime.com/share/embed), set as
 - I understand...: check
 
 After then, click `Get Embeddable Code` and copy the url in embed src. Paste your url to `/frontend/src/configs.json`.
+
+### Configure the open weather map api
+
+Login your [open weather map](https://openweathermap.org/api) dashboard, set up and get your api key.
+
+> You can have 1,000 API free calls per day
+
+Then, replace your api key to `<YOUR_API_KEY>` in `/configs.json`.
 
 ## Developing
 
@@ -82,6 +91,9 @@ After starting, you may find the URL to view the website in the console, and the
 1. To subscribe to RSS feeds, choose FeedApi from the API menu's top right corner button, and then send `/feeds/subscribeAll`.
 2. Switch to NewsApi and send `/news/updateAllNews` to update all news.
 3. Switch to PodcastApi and send `/podcast/updateAllPodcasts` to update all podcasts.
+4. Switch to WeatherApi and input your latitude and longitude in Query with two parameters and send `/weather/updateWeather`, for example:
+   1. lat -33.82375270677538
+   2. lon 151.07842687269158
 
 After then, launch your frontend in a new terminal:
 
@@ -122,7 +134,7 @@ You can access your website using the domain address if you set your own domain.
     - Software Engineer Daily
     - Changelog
     - Code Newbie
-  - Present the time
+  - Present the time and weather
   - Coding Activity (supported by [Wakatime](https://wakatime.com/))
   - Google search bar
   - AWS monthly Billing
@@ -134,7 +146,6 @@ You can access your website using the domain address if you set your own domain.
 
 - Podcast 
   - The Stack Overflow Podcast 
-- Present the location and current weather
 - AWS monitor
   - CloudWatch
     - Logs
@@ -146,9 +157,8 @@ You can access your website using the domain address if you set your own domain.
 - Configurable background, theme, title name
 
 ### Code
-
 - Frontend page responsive
-- Scheduled tasks to update news, podcasts and billing
+- Scheduled tasks to update news, podcasts, billing and weather
 - AWS Cognite for auth
 - SSM to use configurations
 - Support Chrome extension to replace start page

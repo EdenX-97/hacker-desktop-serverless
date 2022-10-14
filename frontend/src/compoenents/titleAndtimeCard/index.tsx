@@ -1,7 +1,9 @@
 import "./titleAndTimeCard.css";
 
 import { Card, CardContent } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { fetchTemp, fetchWeather, updateWeather } from "../../store/weather";
 
 function TimeAndSearchCard() {
   const locale = "en";
@@ -30,6 +32,22 @@ function TimeAndSearchCard() {
     minute: "numeric",
   });
 
+  // Update the weather and temp
+  const weather = useAppSelector((state) => state.weather.weather);
+  const temp = useAppSelector((state) => state.weather.temp);
+  const weatherRef = useRef(weather);
+  const tempRef = useRef(temp);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchWeather());
+    dispatch(fetchTemp());
+  }, [dispatch, weatherRef, tempRef]);
+
+  // const freshBilling = () => {
+  //   dispatch(updateWeather());
+  // };
+
   return (
     <div className="titleAndTime">
       <Card className="titleContent">
@@ -43,7 +61,7 @@ function TimeAndSearchCard() {
           <h1 className="title">{time}</h1>
           <h4 className="content">{date}</h4>
           <h4 className="content">{year}</h4>
-          <h4 className="content">Weather - cannot show yet</h4>
+          <h4 className="content">{weather + " - " + temp + "°C"}</h4>
         </CardContent>
       </Card>
     </div>

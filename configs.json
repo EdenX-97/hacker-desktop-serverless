@@ -45,5 +45,6 @@
     "https://changelog.com/podcast/feed",
     "http://feeds.codenewbie.org/cnpodcast.xml"
   ],
-  "domain": "<YOUR_DOMAIN>"
+  "domain": "<YOUR_DOMAIN>",
+  "weatherApi": "https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&appid=<YOUR_API_KEY>&units=metric"
 }
