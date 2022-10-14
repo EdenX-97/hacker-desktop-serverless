@@ -3,7 +3,7 @@
  * @Author: Mo Xu
  * @Date: 2022-10-05 22:37:07
  * @LastEditors: Mo Xu
- * @LastEditTime: 2022-10-07 17:51:08
+ * @LastEditTime: 2022-10-14 15:30:36
  */
 import { StackContext, Table } from "@serverless-stack/resources";
 
@@ -40,9 +40,20 @@ export function StorageStack({ stack }: StackContext) {
     },
   });
 
+  // Dictionary table
+  const dictionary = new Table(stack, "Dictionary", {
+    fields: {
+      key: "string",
+    },
+    primaryIndex: {
+      partitionKey: "key",
+    },
+  });
+
   return {
     feeds,
     news,
     podcasts,
+    dictionary,
   };
 }

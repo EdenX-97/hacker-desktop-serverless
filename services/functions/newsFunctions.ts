@@ -3,7 +3,7 @@
  * @Author: Mo Xu
  * @Date: 2022-10-07 16:17:46
  * @LastEditors: Mo Xu
- * @LastEditTime: 2022-10-09 23:08:23
+ * @LastEditTime: 2022-10-14 15:36:00
  */
 import { APIGatewayProxyHandlerV2 } from "aws-lambda";
 import configs from "./../../configs.json";

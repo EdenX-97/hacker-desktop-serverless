@@ -1,11 +1,13 @@
 import {Action, configureStore, ThunkAction} from '@reduxjs/toolkit';
 import newsReducer from './news/index'
 import podcastsReducer from './podcasts/index'
+import costReducer from './cost/index'
 
 export const store = configureStore({
     reducer: {
         news: newsReducer,
-        podcasts: podcastsReducer
+        podcasts: podcastsReducer,
+        cost: costReducer
     }
 });
 

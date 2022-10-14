@@ -96,7 +96,7 @@ Now you can view the page by going to the frontend's URL.
 
 ### Deploying
 
-Before to deploying, you must first configure the domain in `/configs.json` using the appropriate format. Alternately, you could remove all instances of `customDomain` from `stacks/ApiStack.ts` and `stacks/FrontendStack.ts`, in which case AWS will provide some default URLs for you to access your website and APIs.
+Before to deploying, you must first configure the domain(do not contains https://) in `/configs.json` using the appropriate format. Alternately, you could remove all instances of `customDomain` from `stacks/ApiStack.ts` and `stacks/FrontendStack.ts`, in which case AWS will provide some default URLs for you to access your website and APIs.
 
 Under the root directory of project:
 
@@ -125,6 +125,8 @@ You can access your website using the domain address if you set your own domain.
   - Present the time
   - Coding Activity (supported by [Wakatime](https://wakatime.com/))
   - Google search bar
+  - AWS monthly Billing
+    - Notice: every time refresh the billing cost 0.01 USD
 
 ## Future
 
@@ -134,7 +136,6 @@ You can access your website using the domain address if you set your own domain.
   - The Stack Overflow Podcast 
 - Present the location and current weather
 - AWS monitor
-  - Billing
   - CloudWatch
     - Logs
     - DynamoDB
@@ -147,7 +148,7 @@ You can access your website using the domain address if you set your own domain.
 ### Code
 
 - Frontend page responsive
-- Scheduled tasks to update news and podcasts
+- Scheduled tasks to update news, podcasts and billing
 - AWS Cognite for auth
 - SSM to use configurations
 - Support Chrome extension to replace start page

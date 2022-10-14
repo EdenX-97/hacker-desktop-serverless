@@ -16,3 +16,4 @@ node_modules
 !.sst/stage
 .env
 cdk.context.json
+build

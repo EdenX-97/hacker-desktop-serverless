@@ -3,11 +3,11 @@
  * @Author: Mo Xu
  * @Date: 2022-10-06 00:08:06
  * @LastEditors: Mo Xu
- * @LastEditTime: 2022-10-07 01:34:09
+ * @LastEditTime: 2022-10-14 02:07:33
  */
-import AWS from "aws-sdk";
+import { DocumentClient } from "aws-sdk/clients/dynamodb";
 
-const client = new AWS.DynamoDB.DocumentClient();
+const client = new DocumentClient();
 
 export default {
   get: (params: any) => client.get(params).promise(),

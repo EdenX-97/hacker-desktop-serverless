@@ -9,7 +9,26 @@
 
 .aws .cardContent {
   padding: 0 !important;
-  margin-left: 20px;
+  margin-left: 1.2vw;
+  margin-right: 1.2vw;
+}
+
+.aws .button {
+  padding: 1vh !important;
+}
+
+.aws .moneyIcon {
+  width: 1.4vw;
+}
+
+.aws .freshIcon {
+  width: 1.4vw;
+}
+
+.aws .billing {
+  display: flex;
+  padding: 1vh;
+  align-items: center;
 }
 
 .aws .title {
@@ -17,5 +36,7 @@
 }
 
 .aws .content {
+  width: 100%;
   font-size: 1.8vh;
+  margin: 0 !important;
 }
