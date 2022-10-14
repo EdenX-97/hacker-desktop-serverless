@@ -12,7 +12,7 @@ A desktop that provides news and podcasts with developer-related information. Ad
 
 ## Example
 
-![Example](https://github.com/EdenX-97/hacker-desktop-serverless/blob/8abe88b2b95d6190ba9e69a77efdabc4016303e4/frontend/public/example.jpg)
+![Example](https://github.com/EdenX-97/hacker-desktop-serverless/blob/b273737d77f243359a23b89499d962b838a62004/frontend/public/example.png)
 
 ## Installing
 
