@@ -3,7 +3,7 @@
  * @Author: Mo Xu
  * @Date: 2022-10-06 22:11:58
  * @LastEditors: Mo Xu
- * @LastEditTime: 2022-10-14 15:31:58
+ * @LastEditTime: 2022-11-15 17:19:10
  */
 import { APIGatewayProxyHandlerV2, APIGatewayProxyEventV2 } from "aws-lambda";
 import dynamodb from "./../utils/dynamodb";
@@ -49,7 +49,7 @@ export async function subscribe(url: string): Promise<resultType> {
       feedName = newsOrPodcast[resultKey].name;
       if (key == "news") {
         feedType = feedTypes.NEWS;
-      } else if (key == "podcast") {
+      } else if (key == "podcasts") {
         feedType = feedTypes.PODCAST;
       }
     }
@@ -109,12 +109,22 @@ export async function subscribe(url: string): Promise<resultType> {
 export const subscribeAll: APIGatewayProxyHandlerV2 = async (
   event: APIGatewayProxyEventV2
 ) => {
-  // // Get url from params
-  // const url = event.queryStringParameters?.url;
-
-  for (let index in configs.links) {
-    const result = await subscribe(configs.links[index]);
+  // Iterate to get all links and subscribe it
+  for (let news in configs.news) {
+    const result = await subscribe(configs.news[news].link);
     if (result.statusCode != status.SUCCESS) {
+      if (result.body == "Feed already exist") {
+        continue;
+      }
+      return result;
+    }
+  }
+  for (let podcast in configs.podcasts) {
+    const result = await subscribe(configs.podcasts[podcast].link);
+    if (result.statusCode != status.SUCCESS) {
+      if (result.body == "Feed already exist") {
+        continue;
+      }
       return result;
     }
   }

@@ -1,7 +1,7 @@
 import { it, expect, test } from "vitest";
-import { subscribe } from "./../functions/feedFunctions";
-import { resultType } from "./../utils/result";
-import status from "./../enums/status";
+import { subscribe } from "../functions/feedFunctions";
+import { resultType } from "../utils/result";
+import status from "../enums/status";
 
 test("Bad URL", async () => {
   const badURLs: string[] = [

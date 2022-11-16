@@ -44,10 +44,6 @@ function TimeAndSearchCard() {
     dispatch(fetchTemp());
   }, [dispatch, weatherRef, tempRef]);
 
-  // const freshBilling = () => {
-  //   dispatch(updateWeather());
-  // };
-
   return (
     <div className="titleAndTime">
       <Card className="titleContent">

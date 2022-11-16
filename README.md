@@ -58,7 +58,7 @@ Login your [open weather map](https://openweathermap.org/api) dashboard, set up 
 
 > You can have 1,000 API free calls per day
 
-Then, replace your api key to `<YOUR_API_KEY>` in `/configs.json`.
+Then, use `npx sst secrets set WEATHER_API_KEY {YOUR_API_KEY}`, replace {YOUR_API_KEY} to your weather api key to set.
 
 ## Developing
 
@@ -139,6 +139,7 @@ You can access your website using the domain address if you set your own domain.
   - Google search bar
   - AWS monthly Billing
     - Notice: every time refresh the billing cost 0.01 USD
+  - News/Podcasts/Billing will be update automatically every monday 3:00
 
 ## Future
 
@@ -155,14 +156,15 @@ You can access your website using the domain address if you set your own domain.
 - Bookmarks 
   - Quick start
 - Configurable background, theme, title name
+- Integrate Excalidraw
 
 ### Code
+
 - Frontend page responsive
 - Scheduled tasks to update news, podcasts, billing and weather
 - AWS Cognite for auth
-- SSM to use configurations
 - Support Chrome extension to replace start page
-- Use GraphQL
+- Use GraphQL?
 
 ## Contributing
 

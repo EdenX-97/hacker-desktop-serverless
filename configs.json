@@ -2,49 +2,47 @@
   "news": {
     "hackerNewsletter": {
       "title": "Hacker Newsletter Archive Feed",
-      "name": "Hacker News"
+      "name": "Hacker News",
+      "link": "https://us1.campaign-archive.com/feed?u=faa8eb4ef3a111cef92c4f3d4&id=e505c88a2e"
     },
     "overflow": {
       "title": "Stack Overflow Blog",
-      "name": "Overflow News"
+      "name": "Overflow News",
+      "link": "https://stackoverflow.blog/feed"
     },
     "InfoQ": {
       "title": "InfoQ",
-      "name": "InfoQ"
+      "name": "InfoQ",
+      "link": "https://feed.infoq.com/news"
     }
   },
-  "podcast": {
+  "podcasts": {
     "accidentalTech": {
       "title": "Accidental Tech Podcast",
-      "name": "Accidental Tech"
+      "name": "Accidental Tech",
+      "link": "https://cdn.atp.fm/rss/public?czzkwjnh"
     },
     "developerTea": {
       "title": "Developer Tea",
-      "name": "Developer Tea"
+      "name": "Developer Tea",
+      "link": "https://feeds.simplecast.com/dLRotFGk"
     },
     "softwareEngineeringDaily": {
       "title": "Software Engineering Daily",
-      "name": "Software Engineering Daily"
+      "name": "Software Engineering Daily",
+      "link": "https://softwareengineeringdaily.com/category/podcast/feed"
     },
     "changelog": {
       "title": "The Changelog: Software Development, Open Source",
-      "name": "Changelog"
+      "name": "Changelog",
+      "link": "https://changelog.com/podcast/feed"
     },
     "codeNewbie": {
       "title": "CodeNewbie",
-      "name": "CodeNewbie"
+      "name": "CodeNewbie",
+      "link": "http://feeds.codenewbie.org/cnpodcast.xml"
     }
   },
-  "links": [
-    "https://us1.campaign-archive.com/feed?u=faa8eb4ef3a111cef92c4f3d4&id=e505c88a2e",
-    "https://stackoverflow.blog/feed",
-    "https://feed.infoq.com/news",
-    "https://cdn.atp.fm/rss/public?czzkwjnh",
-    "https://feeds.simplecast.com/dLRotFGk",
-    "https://softwareengineeringdaily.com/category/podcast/feed",
-    "https://changelog.com/podcast/feed",
-    "http://feeds.codenewbie.org/cnpodcast.xml"
-  ],
-  "domain": "<YOUR_DOMAIN>",
-  "weatherApi": "https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&appid=<YOUR_API_KEY>&units=metric"
+  "domain": "edenhackerdesktop.link",
+  "weatherApi": "https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&appid={apiKey}&units=metric"
 }

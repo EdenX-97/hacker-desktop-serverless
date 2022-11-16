@@ -3,12 +3,13 @@
  * @Author: Mo Xu
  * @Date: 2022-10-01 00:29:32
  * @LastEditors: Mo Xu
- * @LastEditTime: 2022-10-08 23:59:50
+ * @LastEditTime: 2022-11-15 17:34:36
  */
-import { StorageStack } from "./StorageStack";
 import { App } from "@serverless-stack/resources";
+import { StorageStack } from "./StorageStack";
 import { ApiStack } from "./ApiStack";
 import { FrontendStack } from "./FrontendStack";
+import { ScheduleStack } from "./ScheduleStack";
 
 export default function (app: App) {
   app.setDefaultFunctionProps({
@@ -18,5 +19,10 @@ export default function (app: App) {
       format: "esm",
     },
   });
-  app.stack(StorageStack).stack(ApiStack).stack(FrontendStack);
+
+  app
+    .stack(StorageStack)
+    .stack(ApiStack)
+    .stack(FrontendStack)
+    .stack(ScheduleStack);
 }

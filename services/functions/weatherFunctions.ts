@@ -4,7 +4,7 @@ import { APIGatewayProxyEventV2 } from "aws-lambda";
  * @Author: Mo Xu
  * @Date: 2022-10-15 01:04:19
  * @LastEditors: Mo Xu
- * @LastEditTime: 2022-10-15 01:45:52
+ * @LastEditTime: 2022-11-15 16:44:49
  */
 import { APIGatewayProxyHandlerV2 } from "aws-lambda";
 import dynamodb from "./../utils/dynamodb";
@@ -12,6 +12,7 @@ import { get } from "./../utils/request";
 import configs from "./../../configs.json";
 import { result, resultType } from "./../utils/result";
 import status from "./../enums/status";
+import { Config } from "@serverless-stack/node/config";
 
 // Get table name from env
 const tableName = process.env.TABLE_NAME_DICTIONARY;
@@ -28,6 +29,7 @@ export const updateWeather: APIGatewayProxyHandlerV2 = async (
   let requestUrl: string = "";
   if (lat && long) {
     requestUrl = configs.weatherApi
+      .replace("{apiKey}", Config.WEATHER_API_KEY)
       .replace("{lat}", lat)
       .replace("{lon}", long);
   }

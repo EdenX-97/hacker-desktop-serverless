@@ -127,12 +127,12 @@ async function getPodcastByNameAndType(name: any, type: string) {
 export const getAllPodcasts: APIGatewayProxyHandlerV2 = async () => {
   const allPodcasts: object = {};
 
-  for (let index in configs.podcast) {
+  for (let index in configs.podcasts) {
     const postcast = await getPodcastByNameAndType(
-      configs.podcast[index].name,
+      configs.podcasts[index].name,
       feedTypes.PODCAST
     );
-    allPodcasts[configs.podcast[index].name] = postcast;
+    allPodcasts[configs.podcasts[index].name] = postcast;
   }
 
   return result(status.SUCCESS, JSON.stringify(allPodcasts));
@@ -176,14 +176,14 @@ async function updatePodcastMethodOne(feedName: string): Promise<resultType> {
  * @description: Update acciddental tech podcast
  */
 async function updateAccidentalTechPodcast(): Promise<resultType> {
-  return await updatePodcastMethodOne(configs.podcast.accidentalTech.name);
+  return await updatePodcastMethodOne(configs.podcasts.accidentalTech.name);
 }
 
 /**
  * @description: Update developer tea podcast
  */
 async function updateDeveloperTeaPodcast(): Promise<resultType> {
-  return await updatePodcastMethodOne(configs.podcast.developerTea.name);
+  return await updatePodcastMethodOne(configs.podcasts.developerTea.name);
 }
 
 /**
@@ -191,7 +191,7 @@ async function updateDeveloperTeaPodcast(): Promise<resultType> {
  */
 async function updateSoftwareEngineeringDailyPodcast(): Promise<resultType> {
   return await updatePodcastMethodOne(
-    configs.podcast.softwareEngineeringDaily.name
+    configs.podcasts.softwareEngineeringDaily.name
   );
 }
 
@@ -199,14 +199,14 @@ async function updateSoftwareEngineeringDailyPodcast(): Promise<resultType> {
  * @description: Update changelog podcast
  */
 async function updateChangelogPodcast(): Promise<resultType> {
-  return await updatePodcastMethodOne(configs.podcast.changelog.name);
+  return await updatePodcastMethodOne(configs.podcasts.changelog.name);
 }
 
 /**
  * @description: Update codeNewbie podcast
  */
 async function updateCodeNewbiePodcast(): Promise<resultType> {
-  return await updatePodcastMethodOne(configs.podcast.codeNewbie.name);
+  return await updatePodcastMethodOne(configs.podcasts.codeNewbie.name);
 }
 
 /**

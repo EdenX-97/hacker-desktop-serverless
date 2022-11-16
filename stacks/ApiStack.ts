@@ -3,9 +3,9 @@
  * @Author: Mo Xu
  * @Date: 2022-10-01 00:29:32
  * @LastEditors: Mo Xu
- * @LastEditTime: 2022-10-15 01:47:01
+ * @LastEditTime: 2022-11-15 17:29:14
  */
-import { StackContext, Api, use } from "@serverless-stack/resources";
+import { StackContext, Api, use, Config } from "@serverless-stack/resources";
 import { StorageStack } from "./StorageStack";
 import configs from "./../configs.json";
 import { Effect, PolicyStatement } from "aws-cdk-lib/aws-iam";
@@ -33,7 +33,7 @@ export function ApiStack({ stack, app }: StackContext) {
     customDomain: app.stage === "prod" ? apiDomain.feedDomain : undefined,
     defaults: {
       function: {
-        permissions: [feeds],
+        bind: [feeds],
         environment: environment,
         timeout: 60,
       },
@@ -47,7 +47,7 @@ export function ApiStack({ stack, app }: StackContext) {
     customDomain: app.stage === "prod" ? apiDomain.newsDomain : undefined,
     defaults: {
       function: {
-        permissions: [news, feeds],
+        bind: [news, feeds],
         environment: environment,
         timeout: 60,
       },
@@ -62,7 +62,7 @@ export function ApiStack({ stack, app }: StackContext) {
     customDomain: app.stage === "prod" ? apiDomain.podcastDomain : undefined,
     defaults: {
       function: {
-        permissions: [podcasts, feeds],
+        bind: [podcasts, feeds],
         environment: environment,
         timeout: 60,
       },
@@ -75,19 +75,11 @@ export function ApiStack({ stack, app }: StackContext) {
     },
   });
 
-  // Role for lambda function to get cost through cost explorer
-  const costRole = new PolicyStatement({
-    sid: "Stmt1665678808689",
-    actions: ["ce:GetCostAndUsage"],
-    effect: Effect.ALLOW,
-    resources: ["*"],
-  });
-
   const costApi = new Api(stack, "CostApi", {
     customDomain: app.stage === "prod" ? apiDomain.costDomain : undefined,
     defaults: {
       function: {
-        permissions: [dictionary, costRole],
+        bind: [dictionary],
         environment: environment,
         timeout: 60,
       },
@@ -97,14 +89,24 @@ export function ApiStack({ stack, app }: StackContext) {
       "GET /cost/getBilling": "functions/costFunctions.getBilling",
     },
   });
+  // Role for lambda function to get cost through cost explorer
+  costApi.attachPermissions([
+    new PolicyStatement({
+      sid: "Stmt1665678808689",
+      actions: ["ce:GetCostAndUsage"],
+      effect: Effect.ALLOW,
+      resources: ["*"],
+    }),
+  ]);
 
+  const WEATHER_API_KEY = new Config.Secret(stack, "WEATHER_API_KEY");
   const weatherApi = new Api(stack, "WeatherApi", {
     customDomain: app.stage === "prod" ? apiDomain.weatherDomain : undefined,
     defaults: {
       function: {
-        permissions: [dictionary],
         environment: environment,
         timeout: 60,
+        bind: [WEATHER_API_KEY, dictionary],
       },
     },
     routes: {
