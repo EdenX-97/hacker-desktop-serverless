@@ -3,7 +3,7 @@
  * @Author: Mo Xu
  * @Date: 2022-11-15 17:30:08
  * @LastEditors: Mo Xu
- * @LastEditTime: 2022-11-16 11:08:14
+ * @LastEditTime: 2022-11-16 11:44:34
  */
 
 import { StackContext } from "@serverless-stack/resources";
@@ -25,7 +25,7 @@ export function ScheduleStack({ stack, app }: StackContext) {
   });
 
   // Schedule to update billing, every monday morning
-  new Cron(stack, "AutoUpdatePodcasts", {
+  new Cron(stack, "AutoUpdateBilling", {
     schedule: everyMondayMorningCron,
     job: "functions/costFunctions.updateBilling",
   });

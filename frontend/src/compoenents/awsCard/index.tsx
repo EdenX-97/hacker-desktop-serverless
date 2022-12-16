@@ -28,9 +28,9 @@ function AwsCard() {
     <Card className="aws">
       <CardContent className="cardContent">
         <div className="billing">
-          <IconButton className="button">
+          {/* <IconButton className="button">
             <AttachMoneyIcon className="moneyIcon" />
-          </IconButton>
+          </IconButton> */}
           <h3 className="content"> {"AWS billing this month: " + billing} </h3>
           <IconButton onClick={freshBilling} className="button">
             <CachedIcon className="freshIcon" />

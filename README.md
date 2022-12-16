@@ -6,6 +6,8 @@
 
 A desktop that provides news and podcasts with developer-related information. Additionally, provide you with quick start bookmarks, the search bars of popular search engines, the time, the weather, and the AWS billing/logs/status monitor. Running entirely on AWS serverless, convenient and awesome!
 
+[Online Example](https://edenhackerdesktop.link/)
+
 [Installing](#installing) • [Developing](#developing) • [Features](#features) • [Future](#future) • [Contributing](#contributing) • [Links](#links) • [Licensing](#licensing)
 
 </div>
